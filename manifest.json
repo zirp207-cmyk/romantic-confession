@@ -7,7 +7,11 @@
   "display": "standalone",
   "background_color": "#ff69b4",
   "theme_color": "#ff69b4",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["lifestyle", "entertainment", "social"],
   "icons": [
     {
       "src": "assets/images/icon-192.png",
@@ -22,11 +26,6 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["lifestyle", "entertainment", "social"],
-  "lang": "zh-CN",
-  "dir": "ltr",
-  "scope": "/",
-  "prefer_related_applications": false,
   "shortcuts": [
     {
       "name": "爱心动画",
@@ -76,5 +75,10 @@
         }
       ]
     }
-  ]
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 } 

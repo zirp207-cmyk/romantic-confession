@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎵 浪漫音乐 🎵</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/music-player.css">
 </head>
 <body>
     <div class="container">
@@ -20,45 +21,73 @@
             </header>
             
             <div class="music-player">
-                <div class="player-info">
-                    <h2>💕 我们的专属音乐 💕</h2>
-                    <p>在这里添加你们的专属歌曲</p>
+                <!-- 当前播放信息 -->
+                <div class="now-playing" id="nowPlaying">
+                    <div class="current-cover">💕</div>
+                    <h3 id="currentTitle">选择音乐开始播放</h3>
+                    <p id="currentArtist">点击下方音乐列表</p>
                 </div>
                 
-                <div class="music-controls">
-                    <button class="music-btn" onclick="playMusic()">
-                        <i class="fas fa-play"></i> 播放音乐
+                <!-- 播放控制 -->
+                <div class="player-controls">
+                    <button class="control-btn" onclick="prevMusic()">
+                        <i class="fas fa-step-backward"></i>
                     </button>
-                    <button class="music-btn" onclick="pauseMusic()">
-                        <i class="fas fa-pause"></i> 暂停音乐
+                    <button class="play-btn" id="mainPlayBtn" onclick="playMusic()">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="control-btn" onclick="nextMusic()">
+                        <i class="fas fa-step-forward"></i>
                     </button>
                 </div>
                 
+                <!-- 音乐列表 -->
+                <div class="music-section">
+                    <h3>💕 我们的专属音乐 💕</h3>
+                    <div class="music-list" id="musicList">
+                        <!-- 音乐列表将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+                
+                <!-- 使用提示 -->
                 <div class="music-tips">
                     <h3>💡 使用提示</h3>
                     <ul>
                         <li>将音乐文件放入 assets/music/ 文件夹</li>
                         <li>支持 MP3、WAV、OGG 格式</li>
                         <li>可以添加多首歌曲</li>
-                        <li>支持循环播放</li>
+                        <li>支持循环播放和音量控制</li>
                     </ul>
+                </div>
+                
+                <!-- 音乐上传提示 -->
+                <div class="upload-tip">
+                    <h3>📁 添加音乐文件</h3>
+                    <p>将你的浪漫音乐文件放入 <code>assets/music/</code> 文件夹中：</p>
+                    <ul>
+                        <li><code>romantic-bg.mp3</code> - 浪漫背景音乐</li>
+                        <li><code>sweet-time.mp3</code> - 甜蜜时光</li>
+                        <li><code>eternal-love.mp3</code> - 永恒之爱</li>
+                    </ul>
+                    <p>然后刷新页面即可播放！</p>
                 </div>
             </div>
         </div>
+        
+        <!-- 音频控制 -->
+        <div class="audio-control">
+            <button id="musicToggle" onclick="toggleBackgroundMusic()">
+                <i class="fas fa-music"></i>
+            </button>
+        </div>
+        
+        <!-- 背景音乐 -->
+        <audio id="backgroundMusic" loop>
+            <source src="assets/music/romantic-bg.mp3" type="audio/mpeg">
+        </audio>
     </div>
     
-    <script>
-        function goBack() {
-            window.location.href = 'index.html';
-        }
-        
-        function playMusic() {
-            alert('🎵 音乐播放功能需要添加音乐文件到 assets/music/ 文件夹');
-        }
-        
-        function pauseMusic() {
-            alert('⏸️ 音乐暂停功能');
-        }
-    </script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/music-player.js"></script>
 </body>
 </html> 

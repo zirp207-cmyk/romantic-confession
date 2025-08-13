@@ -1,0 +1,407 @@
+/* 移动端优化样式 */
+@media (max-width: 768px) {
+    /* 基础移动端优化 */
+    * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    /* 允许文本选择 */
+    p, h1, h2, h3, h4, h5, h6, span, div {
+        -webkit-user-select: text;
+        user-select: text;
+    }
+    
+    /* 触摸优化 */
+    button, .feature-card, .love-card {
+        -webkit-tap-highlight-color: rgba(255, 105, 180, 0.3);
+        touch-action: manipulation;
+    }
+    
+    /* 防止缩放 */
+    input, textarea, select {
+        font-size: 16px !important;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    
+    /* 移动端字体大小优化 */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .title {
+        font-size: 2em !important;
+    }
+    
+    .subtitle {
+        font-size: 1.1em !important;
+    }
+    
+    /* 移动端间距优化 */
+    .main-content {
+        padding: 15px !important;
+    }
+    
+    .feature-grid {
+        gap: 15px !important;
+    }
+    
+    .feature-card {
+        padding: 20px !important;
+    }
+    
+    /* 移动端按钮优化 */
+    .game-btn, .effect-btn, .control-btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px !important;
+    }
+    
+    /* 移动端卡片优化 */
+    .cards-stack {
+        width: 280px !important;
+        height: 420px !important;
+    }
+    
+    /* 移动端游戏区域优化 */
+    .game-area {
+        height: 300px !important;
+        margin: 15px 0 !important;
+    }
+    
+    /* 移动端音频控制优化 */
+    .audio-control {
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+    
+    #musicToggle {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 16px !important;
+    }
+    
+    /* 移动端返回按钮优化 */
+    .back-button {
+        top: 15px !important;
+        left: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+    
+    /* 移动端进度指示器优化 */
+    .progress-indicator {
+        top: 70px !important;
+        padding: 8px 15px !important;
+    }
+    
+    .progress-bar {
+        width: 150px !important;
+    }
+    
+    /* 移动端提示优化 */
+    .interaction-hint {
+        bottom: 80px !important;
+        font-size: 0.8em !important;
+    }
+    
+    /* 移动端效果按钮优化 */
+    .effect-buttons {
+        bottom: 20px !important;
+        gap: 10px !important;
+    }
+    
+    /* 移动端游戏头部优化 */
+    .game-header {
+        top: 70px !important;
+        padding: 10px 20px !important;
+    }
+    
+    .score-display {
+        gap: 20px !important;
+    }
+    
+    .score-value {
+        font-size: 1.2em !important;
+    }
+    
+    /* 移动端游戏控制优化 */
+    .game-controls {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    /* 移动端游戏结束页面优化 */
+    .game-over-content {
+        margin: 20px !important;
+        padding: 30px 20px !important;
+    }
+    
+    .game-over-content h1 {
+        font-size: 2em !important;
+    }
+    
+    .game-over-buttons {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    /* 移动端暂停页面优化 */
+    .pause-content {
+        margin: 20px !important;
+        padding: 30px 20px !important;
+    }
+    
+    .pause-buttons {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    /* 移动端音乐播放器优化 */
+    .music-player {
+        padding: 15px !important;
+    }
+    
+    .now-playing {
+        padding: 20px !important;
+    }
+    
+    .current-cover {
+        font-size: 4em !important;
+    }
+    
+    .now-playing h3 {
+        font-size: 1.5em !important;
+    }
+    
+    .player-controls {
+        gap: 15px !important;
+    }
+    
+    .control-btn {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1em !important;
+    }
+    
+    .play-btn {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 1.8em !important;
+    }
+    
+    .music-item {
+        padding: 15px !important;
+    }
+    
+    .music-cover {
+        font-size: 2em !important;
+        margin-right: 15px !important;
+        width: 50px !important;
+    }
+    
+    .music-info h4 {
+        font-size: 1.1em !important;
+    }
+    
+    .music-tips,
+    .upload-tip {
+        padding: 20px !important;
+    }
+    
+    /* 移动端相册优化 */
+    .gallery-header {
+        padding: 20px 15px !important;
+    }
+    
+    .gallery-header h1 {
+        font-size: 1.8em !important;
+    }
+    
+    .upload-section {
+        margin: 20px 15px !important;
+    }
+    
+    .gallery-stats {
+        margin: 20px 15px !important;
+        gap: 15px !important;
+    }
+    
+    .gallery-grid {
+        padding: 0 15px !important;
+    }
+    
+    /* 移动端设置页面优化 */
+    .settings-container {
+        padding: 20px 15px !important;
+    }
+    
+    .setting-section {
+        margin-bottom: 25px !important;
+    }
+    
+    .setting-item {
+        margin-bottom: 15px !important;
+    }
+    
+    .setting-actions {
+        gap: 15px !important;
+    }
+    
+    /* 移动端爱心动画优化 */
+    .heart-animation-container {
+        padding: 15px !important;
+    }
+    
+    .main-heart {
+        font-size: 6em !important;
+    }
+    
+    .message-title {
+        font-size: 2em !important;
+    }
+    
+    .message-text {
+        font-size: 1.1em !important;
+    }
+    
+    .message-input-container {
+        padding: 20px !important;
+        width: 95% !important;
+    }
+    
+    .interaction-hint {
+        bottom: 80px !important;
+        font-size: 0.8em !important;
+    }
+    
+    /* 移动端表白卡片优化 */
+    .cards-container {
+        padding: 15px !important;
+    }
+    
+    .action-hints {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    /* 移动端通用优化 */
+    .container {
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    /* 防止水平滚动 */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* 触摸反馈优化 */
+    .feature-card:active,
+    .love-card:active,
+    .game-btn:active,
+    .effect-btn:active {
+        transform: scale(0.95) !important;
+    }
+    
+    /* 移动端动画优化 */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8em !important;
+    }
+    
+    .subtitle {
+        font-size: 1em !important;
+    }
+    
+    .feature-card {
+        padding: 15px !important;
+    }
+    
+    .feature-icon {
+        font-size: 2em !important;
+    }
+    
+    .cards-stack {
+        width: 260px !important;
+        height: 390px !important;
+    }
+    
+    .game-area {
+        height: 250px !important;
+    }
+    
+    .now-playing {
+        padding: 15px !important;
+    }
+    
+    .current-cover {
+        font-size: 3em !important;
+    }
+}
+
+/* 横屏优化 */
+@media (orientation: landscape) and (max-height: 500px) {
+    .game-header {
+        top: 10px !important;
+        padding: 8px 15px !important;
+    }
+    
+    .game-area {
+        height: 200px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .game-controls {
+        margin: 10px 0 !important;
+    }
+    
+    .interaction-hint {
+        bottom: 60px !important;
+    }
+    
+    .effect-buttons {
+        bottom: 10px !important;
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .feature-card,
+    .love-card,
+    .game-btn,
+    .effect-btn {
+        border-width: 0.5px;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .feature-card,
+    .game-header,
+    .progress-indicator {
+        background: rgba(0, 0, 0, 0.8) !important;
+        color: white !important;
+    }
+    
+    .feature-card h3,
+    .game-header .score-label {
+        color: #ff69b4 !important;
+    }
+} 
