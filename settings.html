@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ 个性设置 ⚙️</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+        
+        <div class="main-content">
+            <header class="header">
+                <h1 class="title">⚙️ 个性设置 ⚙️</h1>
+                <p class="subtitle">自定义你的专属表白内容</p>
+            </header>
+            
+            <div class="settings-container">
+                <div class="setting-section">
+                    <h3>💕 个人信息</h3>
+                    <div class="setting-item">
+                        <label>她的昵称：</label>
+                        <input type="text" id="herName" placeholder="输入她的昵称" value="亲爱的">
+                    </div>
+                    <div class="setting-item">
+                        <label>你的昵称：</label>
+                        <input type="text" id="myName" placeholder="输入你的昵称" value="我">
+                    </div>
+                </div>
+                
+                <div class="setting-section">
+                    <h3>🎨 主题设置</h3>
+                    <div class="setting-item">
+                        <label>主题颜色：</label>
+                        <select id="themeColor">
+                            <option value="pink">浪漫粉色</option>
+                            <option value="red">热情红色</option>
+                            <option value="purple">神秘紫色</option>
+                            <option value="blue">清新蓝色</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="setting-section">
+                    <h3>💌 自定义消息</h3>
+                    <div class="setting-item">
+                        <label>专属情话：</label>
+                        <textarea id="customMessage" placeholder="写下你想说的话...">你是我生命中最美的风景</textarea>
+                    </div>
+                </div>
+                
+                <div class="setting-actions">
+                    <button class="save-btn" onclick="saveSettings()">💾 保存设置</button>
+                    <button class="reset-btn" onclick="resetSettings()">🔄 重置设置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+        function saveSettings() {
+            const settings = {
+                herName: document.getElementById('herName').value,
+                myName: document.getElementById('myName').value,
+                themeColor: document.getElementById('themeColor').value,
+                customMessage: document.getElementById('customMessage').value
+            };
+            
+            localStorage.setItem('userSettings', JSON.stringify(settings));
+            alert('✅ 设置已保存！');
+        }
+        
+        function resetSettings() {
+            if (confirm('确定要重置所有设置吗？')) {
+                localStorage.removeItem('userSettings');
+                location.reload();
+            }
+        }
+        
+        // 加载保存的设置
+        function loadSettings() {
+            const settings = JSON.parse(localStorage.getItem('userSettings') || '{}');
+            if (settings.herName) document.getElementById('herName').value = settings.herName;
+            if (settings.myName) document.getElementById('myName').value = settings.myName;
+            if (settings.themeColor) document.getElementById('themeColor').value = settings.themeColor;
+            if (settings.customMessage) document.getElementById('customMessage').value = settings.customMessage;
+        }
+        
+        // 页面加载时执行
+        document.addEventListener('DOMContentLoaded', loadSettings);
+    </script>
+</body>
+</html> 

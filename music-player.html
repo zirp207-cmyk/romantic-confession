@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 浪漫音乐 🎵</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+        
+        <div class="main-content">
+            <header class="header">
+                <h1 class="title">🎵 浪漫音乐 🎵</h1>
+                <p class="subtitle">专属的爱情音乐播放器</p>
+            </header>
+            
+            <div class="music-player">
+                <div class="player-info">
+                    <h2>💕 我们的专属音乐 💕</h2>
+                    <p>在这里添加你们的专属歌曲</p>
+                </div>
+                
+                <div class="music-controls">
+                    <button class="music-btn" onclick="playMusic()">
+                        <i class="fas fa-play"></i> 播放音乐
+                    </button>
+                    <button class="music-btn" onclick="pauseMusic()">
+                        <i class="fas fa-pause"></i> 暂停音乐
+                    </button>
+                </div>
+                
+                <div class="music-tips">
+                    <h3>💡 使用提示</h3>
+                    <ul>
+                        <li>将音乐文件放入 assets/music/ 文件夹</li>
+                        <li>支持 MP3、WAV、OGG 格式</li>
+                        <li>可以添加多首歌曲</li>
+                        <li>支持循环播放</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+        
+        function playMusic() {
+            alert('🎵 音乐播放功能需要添加音乐文件到 assets/music/ 文件夹');
+        }
+        
+        function pauseMusic() {
+            alert('⏸️ 音乐暂停功能');
+        }
+    </script>
+</body>
+</html> 
