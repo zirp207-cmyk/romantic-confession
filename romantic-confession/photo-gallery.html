@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📸 回忆相册 📸</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/photo-gallery.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+        
+        <!-- 相册头部 -->
+        <div class="gallery-header">
+            <h1>💕 我们的美好回忆 💕</h1>
+            <p>每一张照片都记录着我们的甜蜜时光</p>
+        </div>
+        
+        <!-- 上传区域 -->
+        <div class="upload-section">
+            <div class="upload-area" onclick="triggerFileInput()">
+                <div class="upload-icon">📷</div>
+                <p class="upload-text">点击添加我们的照片</p>
+                <p class="upload-hint">支持 JPG、PNG、GIF 格式</p>
+            </div>
+            <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
+        </div>
+        
+        <!-- 相册统计 -->
+        <div class="gallery-stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalPhotos">0</span>
+                <span class="stat-label">张照片</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalMemories">0</span>
+                <span class="stat-label">个回忆</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="daysTogether">∞</span>
+                <span class="stat-label">天相伴</span>
+            </div>
+        </div>
+        
+        <!-- 相册网格 -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- 示例照片占位符 -->
+            <div class="photo-placeholder">
+                <div class="placeholder-icon">📸</div>
+                <p>还没有照片</p>
+                <p>快来上传我们的美好瞬间吧！</p>
+            </div>
+        </div>
+        
+        <!-- 批量操作 -->
+        <div class="batch-actions" id="batchActions" style="display: none;">
+            <button class="batch-btn" onclick="selectAll()">
+                <i class="fas fa-check-double"></i> 全选
+            </button>
+            <button class="batch-btn" onclick="deleteSelected()">
+                <i class="fas fa-trash"></i> 删除选中
+            </button>
+            <button class="batch-btn" onclick="downloadSelected()">
+                <i class="fas fa-download"></i> 下载选中
+            </button>
+            <button class="batch-btn" onclick="clearSelection()">
+                <i class="fas fa-times"></i> 取消选择
+            </button>
+        </div>
+        
+        <!-- 照片查看器 -->
+        <div class="photo-viewer" id="photoViewer" style="display: none;">
+            <div class="viewer-overlay" onclick="closeViewer()"></div>
+            <div class="viewer-content">
+                <button class="viewer-close" onclick="closeViewer()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="viewer-prev" onclick="prevPhoto()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="viewer-next" onclick="nextPhoto()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <img id="viewerImage" src="" alt="查看照片">
+                <div class="viewer-info">
+                    <h3 id="viewerTitle">美好回忆</h3>
+                    <p id="viewerDate"></p>
+                    <div class="viewer-actions">
+                        <button onclick="addPhotoDescription()">
+                            <i class="fas fa-edit"></i> 添加描述
+                        </button>
+                        <button onclick="deleteCurrentPhoto()">
+                            <i class="fas fa-trash"></i> 删除
+                        </button>
+                        <button onclick="downloadCurrentPhoto()">
+                            <i class="fas fa-download"></i> 下载
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 描述编辑器 -->
+        <div class="description-editor" id="descriptionEditor" style="display: none;">
+            <div class="editor-overlay" onclick="closeDescriptionEditor()"></div>
+            <div class="editor-content">
+                <h3>💌 为这张照片添加描述</h3>
+                <textarea id="photoDescription" placeholder="写下这个美好瞬间的故事..."></textarea>
+                <div class="editor-buttons">
+                    <button onclick="saveDescription()">保存</button>
+                    <button onclick="closeDescriptionEditor()">取消</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 音频控制 -->
+        <div class="audio-control">
+            <button id="musicToggle" onclick="toggleBackgroundMusic()">
+                <i class="fas fa-music"></i>
+            </button>
+        </div>
+        
+        <!-- 背景音乐 -->
+        <audio id="backgroundMusic" loop>
+            <source src="assets/music/romantic-bg.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/photo-gallery.js"></script>
+</body>
+</html> 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 爱心动画 💖</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/heart-animation.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+        
+        <!-- 爱心动画区域 -->
+        <div class="heart-animation-container">
+            <div class="main-heart" onclick="createHeartExplosion()">
+                💖
+            </div>
+            
+            <!-- 花瓣动画 -->
+            <div class="petals-container">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            
+            <!-- 表白文字 -->
+            <div class="love-message" id="loveMessage">
+                <h1 class="message-title">我的心跳只为你</h1>
+                <p class="message-text">每一次心跳都在说着我爱你</p>
+                <div class="message-extra" id="extraMessage"></div>
+            </div>
+            
+            <!-- 互动提示 */
+            <div class="interaction-hint">
+                <p>💕 点击爱心创造浪漫 💕</p>
+                <p>长按屏幕写下你的心声</p>
+            </div>
+        </div>
+        
+        <!-- 自定义消息输入 -->
+        <div class="message-input-overlay" id="messageInput" style="display: none;">
+            <div class="message-input-container">
+                <h3>💌 写下你的心声 💌</h3>
+                <textarea id="customMessage" placeholder="在这里写下你想说的话..."></textarea>
+                <div class="input-buttons">
+                    <button onclick="saveCustomMessage()">保存</button>
+                    <button onclick="hideMessageInput()">取消</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 音频控制 -->
+        <div class="audio-control">
+            <button id="musicToggle" onclick="toggleBackgroundMusic()">
+                <i class="fas fa-music"></i>
+            </button>
+        </div>
+        
+        <!-- 背景音乐 -->
+        <audio id="backgroundMusic" loop>
+            <source src="assets/music/romantic-bg.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/heart-animation.js"></script>
+</body>
+</html> 
