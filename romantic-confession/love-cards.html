@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 表白卡片 💌</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/love-cards.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+        
+        <!-- 卡片容器 -->
+        <div class="cards-container">
+            <div class="progress-indicator">
+                <div class="progress-bar" id="progressBar"></div>
+                <span class="progress-text" id="progressText">1 / 10</span>
+            </div>
+            
+            <!-- 卡片堆叠 -->
+            <div class="cards-stack" id="cardsStack">
+                <!-- 卡片将通过JavaScript动态生成 -->
+            </div>
+            
+            <!-- 操作提示 -->
+            <div class="action-hints">
+                <div class="hint-item">
+                    <div class="hint-icon">👆</div>
+                    <p>点击翻开卡片</p>
+                </div>
+                <div class="hint-item">
+                    <div class="hint-icon">👈</div>
+                    <p>滑动查看下一张</p>
+                </div>
+            </div>
+            
+            <!-- 特殊效果按钮 -->
+            <div class="effect-buttons">
+                <button class="effect-btn" onclick="shuffleCards()">
+                    <i class="fas fa-random"></i> 重新洗牌
+                </button>
+                <button class="effect-btn" onclick="showAllCards()">
+                    <i class="fas fa-th"></i> 显示全部
+                </button>
+            </div>
+        </div>
+        
+        <!-- 完成页面 -->
+        <div class="completion-page" id="completionPage" style="display: none;">
+            <div class="completion-content">
+                <div class="completion-heart">💝</div>
+                <h1>所有的心意都已传达</h1>
+                <p>每一张卡片都是我对你满满的爱</p>
+                <div class="completion-message" id="finalMessage"></div>
+                <div class="completion-buttons">
+                    <button onclick="restartCards()">重新开始</button>
+                    <button onclick="goBack()">返回主页</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 卡片展示模式 -->
+        <div class="all-cards-view" id="allCardsView" style="display: none;">
+            <div class="view-header">
+                <h2>💕 我们的回忆 💕</h2>
+                <button onclick="hideAllCards()">关闭</button>
+            </div>
+            <div class="cards-grid" id="cardsGrid">
+                <!-- 网格卡片将通过JavaScript生成 -->
+            </div>
+        </div>
+        
+        <!-- 音频控制 -->
+        <div class="audio-control">
+            <button id="musicToggle" onclick="toggleBackgroundMusic()">
+                <i class="fas fa-music"></i>
+            </button>
+        </div>
+        
+        <!-- 背景音乐 -->
+        <audio id="backgroundMusic" loop>
+            <source src="assets/music/romantic-bg.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/love-cards.js"></script>
+</body>
+</html> 
